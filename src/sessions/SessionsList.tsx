@@ -6,6 +6,7 @@ import {
   Pagination,
   ReferenceArrayField,
   SingleFieldList,
+  DateField,
   TextField,
 } from 'react-admin'
 import { name as peopleName } from '../people'
@@ -15,6 +16,7 @@ interface Props {}
 export const SessionsList: React.FC<Props> = props => (
   <List {...props} pagination={<Pagination />}>
     <Datagrid rowClick="edit">
+      <DateField source="startsAt" showTime />
       <TextField source="title" />
       <ReferenceArrayField source="speaker" reference={peopleName}>
         <SingleFieldList>

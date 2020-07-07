@@ -6,7 +6,9 @@ import {
   ReferenceArrayInput,
   SelectArrayInput,
   TextInput,
-  required, ReferenceInput, AutocompleteInput,
+  required,
+  ReferenceInput,
+  AutocompleteInput,
 } from 'react-admin'
 import { name as peopleName } from '../people'
 
@@ -19,9 +21,9 @@ export const SessionCreate: React.FC<Props> = props => {
         <TextInput source="title" fullWidth validate={required()} />
         <DateTimeInput source="startsAt" validate={required()} />
         <DateTimeInput source="endsAt" validate={required()} />
-        <TextInput label="Type" source="type.name" />
-        <TextInput label="Type color" source="type.color" />
-        <ReferenceInput label="Existing Type" source="type.name" reference="types">
+        {/*<TextInput label="Type" source="type.name" />
+        <TextInput label="Type color" source="type.color" />*/}
+        <ReferenceInput label="Type" source="type.name" reference="types" validate={required()}>
           <AutocompleteInput allowEmpty optionText="name" />
         </ReferenceInput>
         <TextInput multiline fullWidth source="description" />

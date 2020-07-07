@@ -28,9 +28,9 @@ export const SessionEdit: React.FC<Props> = props => {
         <TextInput source="title" fullWidth validate={required()} />
         <DateTimeInput source="startsAt" validate={required()} />
         <DateTimeInput source="endsAt" validate={required()} />
-        <TextInput label="Type" source="type.name" />
-        <TextInput label="Type color" source="type.color" />
-        <ReferenceInput label="Existing Type" source="type.name" reference="types">
+        {/*<TextInput label="Type" source="type.name" />
+        <TextInput label="Type color" source="type.color" />*/}
+        <ReferenceInput label="Type" source="type.name" reference="types" validate={required()}>
           <AutocompleteInput allowEmpty optionText="name" />
         </ReferenceInput>
         <TextInput multiline fullWidth source="description" />
